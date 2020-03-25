@@ -1,16 +1,32 @@
-# try_excel
+[![pub package](https://img.shields.io/pub/v/file_picker.svg)](https://pub.dartlang.org/packages/file_picker)
+[![pub package](https://img.shields.io/pub/v/dio.svg)](https://pub.dev/packages/dio#-readme-tab-)
+[![Awesome Flutter](https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square)](https://github.com/Solido/awesome-flutter)
 
-A new Flutter project.
+# file_picker
 
-## Getting Started
+File picker plugin alows you to use a native file explorer to load absolute file path from different file types.
 
-This project is a starting point for a Flutter application.
+## Installation
 
-A few resources to get you started if this is your first Flutter project:
+First, add  *file_picker*,*Dio*  as a dependency in [your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+```
+file_picker: ^1.5.0+2
+Dio: ^3.0.9
+```
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Api
+
+I am using laravel for Api handling
+
+```
+    $file = $request->file('file');
+
+    $extension = $file->getClientOriginalExtension();
+
+    $fullFileName = time(). '.'. $extension;
+
+    $file->storeAs('folderName', $fullFileName,  ['disk' => 'local']);
+
+    return 'uploaded Successfully';
+```
