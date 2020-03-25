@@ -37,12 +37,11 @@ class _MyAppState extends State<MyApp> {
 
       setState(() {
         _fileName = _path != null ? _path.split('/').last : '...';
-        saveIncident();
       });
     }
   }
   var dio = new Dio();
-  Future<void> saveIncident() async {
+  Future<void> _saveIncident() async {
 
     
     final url = "http://test.karbh.com/test";
@@ -159,6 +158,13 @@ class _MyAppState extends State<MyApp> {
                     new Text(
                       _fileName,
                       textAlign: TextAlign.center,
+                    ),
+                    new Padding(
+                      padding: const EdgeInsets.only(top: 50.0, bottom: 20.0),
+                      child: new RaisedButton(
+                        onPressed: () => _saveIncident(),
+                        child: new Text("Upload File on server"),
+                      ),
                     ),
                   ],
                 ),
