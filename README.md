@@ -6,6 +6,10 @@
 
 File picker plugin alows you to use a native file explorer to load absolute file path from different file types.
 
+# Dio
+
+A powerful Http client for Dart, which supports Interceptors, Global configuration, FormData, Request Cancellation, File downloading, Timeout etc.
+
 ## Installation
 
 First, add  *file_picker*,*Dio*  as a dependency in [your pubspec.yaml file](https://flutter.io/platform-plugins/).
